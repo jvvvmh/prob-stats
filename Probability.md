@@ -219,7 +219,7 @@ $$
 - Then $E[X]=\frac{\alpha+\beta}{2}$.
 - And $\operatorname{Var}[X]=\operatorname{Var}[(\beta-\alpha) Y+\alpha]=\operatorname{Var}[(\beta-\alpha) Y]=$ $(\beta-\alpha)^{2} \operatorname{Var}[Y]=(\beta-\alpha)^{2} / 12$.
 
-Independent
+### Independent
 
 - We say $X$ and $Y$ are independent if for any two (measurable) sets $A$ and $B$ of real numbers we have
 
@@ -240,7 +240,7 @@ P\{X+Y & \leq a\}=\int_{-\infty}^{\infty} \int_{-\infty}^{a-y} f_{X}(x) f_{Y}(y)
 \end{aligned}
 $$
 
-Differentiating both sides gives $f_{X+Y}(a)=\frac{d}{d a} \int_{-\infty}^{\infty} F_{X}(a-y) f_{Y}(y) d y=\int_{-\infty}^{\infty} f_{X}(a-y) f_{Y}(y) d y$.
+- Differentiating both sides gives $f_{X+Y}(a)=\frac{d}{d a} \int_{-\infty}^{\infty} F_{X}(a-y) f_{Y}(y) d y=\int_{-\infty}^{\infty} f_{X}(a-y) f_{Y}(y) d y$.
 
 - Latter formula makes some intuitive sense. We're integrating over the set of $x, y$ pairs that add up to $a$.
 
@@ -251,16 +251,6 @@ Differentiating both sides gives $f_{X+Y}(a)=\frac{d}{d a} \int_{-\infty}^{\inft
 - In particular, $Y_{1}=\min \left\{X_{1}, \ldots, X_{n}\right\}$ and $Y_{n}=\max \left\{X_{1}, \ldots, X_{n}\right\}$ is the maximum.
 - What is the joint probability density of the $Y_{i}$ ?
 - Answer: $f\left(x_{1}, x_{2}, \ldots, x_{n}\right)=n!\prod_{i=1}^{n} f\left(x_{i}\right)$ if $x_{1}<x_{2} \ldots<x_{n}$, zero otherwise.
-- Let $\sigma:\{1,2, \ldots, n\} \rightarrow\{1,2, \ldots, n\}$ be the permutation such that $X_{j}=Y_{\sigma(j)}$
-- Are $\sigma$ and the vector $\left(Y_{1}, \ldots, Y_{n}\right)$ independent of each other?
-- Yes.
-- For both discrete and continuous random variables $X$ and $Y$ we have $E[X+Y]=E[X]+E[Y]$.
-- In both discrete and continuous settings, $E[a X]=a E[X]$ when $a$ is a constant. And $E\left[\sum a_{i} X_{i}\right]=\sum a_{i} E\left[X_{i}\right]$.
-- But what about that delightful "area under $1-F_{X}$ " formula for the expectation?
-- When $X$ is non-negative with probability one, do we always have $E[X]=\int_{0}^{\infty} P\{X>x\}$, in both discrete and continuous settings?
-- Define $g(y)$ so that $1-F_{X}(g(y))=y$. (Draw horizontal line at height $y$ and look where it hits graph of $1-F_{X}$.)
-- Choose $Y$ uniformly on $[0,1]$ and note that $g(Y)$ has the same probability distribution as $X$.
-- So $E[X]=E[g(Y)]=\int_{0}^{1} g(y) d y$, which is indeed the area under the graph of $1-F_{X}$.
 
 
 
