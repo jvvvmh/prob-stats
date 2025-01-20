@@ -196,3 +196,104 @@ $$
 
 ## Continuous Distributions
 
+### Uniform Distribution
+
+
+$$
+f(x \mid a, b)= \begin{cases}\dfrac{1}{b-a}  & \text { if } x \in[a, b] \\ \text { otherwise }\end{cases}
+$$
+
+$$
+\begin{aligned}
+\mathrm{EX} & =\int_a^b \frac{x}{b-a} d x=\frac{b+a}{2} \\
+\operatorname{Var} X & =\int_a^b \frac{\left(x-\frac{b+a}{2}\right)^2}{b-a} d x=\frac{(b-a)^2}{12}
+\end{aligned}
+$$
+
+### Gamma Distribution
+
+If $\alpha$ is a positive constant,
+$$
+\Gamma(\alpha)=\int_0^{\infty} t^{\alpha-1} e^{-t} d t
+$$
+
+The gamma function satisfies many useful relationships, in particular
+$$
+\Gamma(\alpha+1)=\alpha \Gamma(\alpha), \quad \alpha>0
+$$
+which can be verified through integration by parts. $\Gamma(1)=1$, we have for any integer $n>0$,
+$$
+\Gamma(n)=(n-1)!
+$$
+(Another useful special case is that $\Gamma\left(\frac{1}{2}\right)=\sqrt{\pi}$.)
+
+
+$$
+f(t)=\frac{t^{\alpha-1} e^{-t}}{\Gamma(\alpha)}, \quad 0<t<\infty \quad \quad 
+$$
+is a pdf. The full gamma family, however, has two parameters, and can be derived by changing variables to get the pdf of the random variable $X=\beta T$.
+$$
+f(x \mid \alpha, \beta)=\frac{1}{\Gamma(\alpha) \beta^\alpha} x^{\alpha-1} e^{-x / \beta}, \quad 0<x<\infty, \quad \alpha>0, \quad \beta>0
+$$
+$\alpha$: shape parameter, peakedness of the distribution
+
+$\beta$: scale parameter, spread of the 
+
+
+$$
+\begin{aligned}
+\mathrm{EX} & =\frac{1}{\Gamma(\alpha) \beta^\alpha} \int_0^{\infty} x^\alpha e^{-x / \beta} d x \\
+& =\frac{1}{\Gamma(\alpha) \beta^\alpha} \Gamma(\alpha+1) \beta^{\alpha+1} \\
+& =\frac{\alpha \Gamma(\alpha) \beta}{\Gamma(\alpha)} \\
+& =\alpha \beta
+\end{aligned}
+$$
+
+$$
+\operatorname{Var} X=\alpha \beta^2
+$$
+
+$$
+M_X(t)=\left(\frac{1}{1-\beta t}\right)^\alpha, \quad t<\frac{1}{\beta}
+$$
+
+
+
+Example 3.3.1 (Gamma-Poisson relationship) If $X$ is a gamma $(\alpha, \beta)$ random variable, where $\alpha$ is an integer, then for any $x$,
+$$
+P(X \leq x)=P(Y \geq \alpha)
+$$
+where $Y \sim$ Poisson $(x / \beta)$. (established by successive integrations by parts, as follows. Since $\alpha$ is an integer, we write $\Gamma(\alpha)=(\alpha-1)!$ )
+
+
+
+### Chi Squared (p/2, 2)
+
+If we set $\alpha=p / 2$. where $p$ is an integer, and $\beta=2$, then the gamma pdf becomes
+$$
+f(x \mid p)=\frac{1}{\Gamma(p / 2) 2^{p / 2}} x^{(p / 2)-1} e^{-x / 2}, \quad 0<x<\infty
+$$
+which is the chi squared pdf with $p$ degrees of freedom. The mean, variance, and mgf of the chi squared distribution can all be calculated by using the previously derived gamma formulas.
+
+
+
+### Exponential Distribution (1)
+
+When we set $\alpha=1$. We then have
+$$
+f(x \mid \beta)=\frac{1}{\beta} e^{-x / \beta}, \quad 0<x<\infty,
+$$
+the exponential $p d f$ with scale parameter $\beta$. The exponential distribution can be used to model lifetimes, analogous to the use of the geometric distribution in the discrete case. In fact, the exponential distribution shares the "memoryless" property of the geometric. If $X \sim \operatorname{exponential}(\beta)$, then for $s>t \geq 0$,
+$$
+\begin{aligned}
+P(X>s \mid X>t) & =\frac{P(X>s, X>t)}{P(X>t)} \\
+& =\frac{P(X>s)}{P(X>t)} \\
+& =\frac{\int_s^{\infty} \frac{1}{\beta} e^{-x / \beta} d x}{\int_t^{\infty} \frac{1}{\beta} e^{-x / \beta} d x} \\
+& =\frac{e^{-s / \beta}}{e^{-t / \beta}} \\
+& =e^{-(s-t) / \beta} \\
+& =P(X>s-t)
+\end{aligned}
+$$
+
+
+ 
