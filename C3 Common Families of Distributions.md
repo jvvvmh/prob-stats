@@ -296,4 +296,127 @@ P(X>s \mid X>t) & =\frac{P(X>s, X>t)}{P(X>t)} \\
 $$
 
 
+ Normal distribution
+$$
+f\left(x \mid \mu, \sigma^2\right)=\frac{1}{\sqrt{2 \pi} \sigma} e^{-(x-\mu)^2 /\left(2 \sigma^2\right)}, \quad-\infty<x<\infty
+$$
  
+$$
+\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-z^2 / 2} d z=1
+$$
+$$
+\int_0^{\infty} e^{-z^2 / 2} d z=\frac{\sqrt{2 \pi}}{2}=\sqrt{\frac{\pi}{2}}
+$$
+$$
+t=r \cos \theta \quad \text { and } \quad u=r \sin \theta .
+$$
+
+Then $r^2+u^2=r^2$ and $d t d u=r d \theta d r$ and the limits of integration become $0<r<\infty, 0<\theta<\pi / 2$ (the upper limit on $\theta$ is $\pi / 2$ because $t$ and $u$ are restricted to be positive). We now have
+$$
+\begin{aligned}
+\int_0^{\infty} \int_0^{\infty} e^{-\left(r^2+u^2\right) / 2} d t d u & =\int_0^{\infty} \int_0^{\pi / 2} r e^{-r^2 / 2} d \theta d r \\
+& =\frac{\pi}{2} \int_0^{\infty} r e^{-r^2 / 2} d r \\
+& =\frac{\pi}{2}\left[-\left.e^{-r^2 / 2}\right|_0 ^{\infty}\right] \\
+& =\frac{\pi}{2}
+\end{aligned}
+$$
+Making the substitution $w=\frac{1}{2} z^2$,
+$$
+\Gamma\left(\frac{1}{2}\right)=\int_0^{\infty} w^{-1 / 2} e^{-w} d w=\sqrt{\pi}
+$$
+
+
+$$
+\begin{aligned}
+P(|X-\mu| \leq \sigma) & =P(|Z| \leq 1)=.6826 \\
+P(|X-\mu| \leq 2 \sigma) & =P(|Z| \leq 2)=.9544 \\
+P(|X-\mu| \leq 3 \sigma) & =P(|Z| \leq 3)=.9974
+\end{aligned}
+$$
+
+
+
+
+### Beta Distribution
+
+$$
+f(x \mid \alpha, \beta)=\frac{1}{B(\alpha, \beta)} x^{\alpha-1}(1-x)^{\beta-1}, \quad 0<x<1, \quad \alpha>0, \quad \beta>0
+$$
+where $B(\alpha, \beta)$ denotes the beta function,
+$$
+B(\alpha, \beta)=\int_0^1 x^{\alpha-1}(1-x)^{\beta-1} d x
+$$
+
+The beta function is related to the gamma function through the following identity:
+$$
+B(\alpha, \beta)=\frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha+\beta)}
+$$
+
+
+
+For $n>-\alpha$ we have
+$$
+\begin{aligned}
+E X^n & =\frac{1}{B(\alpha, \beta)} \int_0^1 x^n x^{\alpha-1}(1-x)^{\beta-1} d x \\
+& =\frac{1}{B(\alpha, \beta)} \int_0^1 x^{(\alpha+n)-1}(1-x)^{\beta-1} d x
+\end{aligned}
+$$
+
+We now recognize the integrand as the kernel of a beta $(\alpha+n, \beta)$ pdf, hence
+$$
+\mathrm{E} X^n=\frac{B(\alpha+n, \beta)}{B(\alpha, \beta)}=\frac{\Gamma(\alpha+n) \Gamma(\alpha+\beta)}{\Gamma(\alpha+\beta+n) \Gamma(\alpha)}
+$$
+
+$$
+\mathrm{EX}=\frac{\alpha}{\alpha+\beta} \quad \text { and } \quad \operatorname{Var} X=\frac{\alpha \beta}{(\alpha+\beta)^2(\alpha+\beta+1)}
+$$
+
+
+
+
+
+### Cauchy Distribution
+
+$$
+f(x \mid \theta)=\frac{1}{\pi} \frac{1}{1+(x-\theta)^2}, \quad-\infty<x<\infty, \quad-\infty<\theta<\infty \text {, }
+$$
+A surprising fact is that the ratio of two standard normals has a Cauchy distribution. Taking ratios can lead to ill-behaved distributions.
+
+
+
+### Lognormal Distribution
+
+$\log X \sim \mathrm{n}\left(\mu, \sigma^2\right)$ ), 
+$$
+\begin{aligned}
+\mathrm{EX} & =\mathrm{E} e^{\log X} \\
+& =\mathrm{E} e^Y \\
+& =e^{\mu+\left(\sigma^2 / 2\right)}
+\end{aligned} \quad\left(Y=\log X \sim \mathrm{n}\left(\mu, \sigma^2\right)\right)
+$$
+
+We can use a similar technique to calculate $E X^2$ and get
+$$
+\operatorname{Var} X=e^{2\left(\mu+\sigma^2\right)}-e^{2 \mu+\sigma^2}
+$$
+
+Incomes are necessarily skewed to the right and modeling with a lognormal allows the use of normal-theory statistics on $\log$ (income).
+
+### Double Exponential Distribution
+
+Reflect the exponential distribution around its mean.
+$$
+f(x \mid \mu, \sigma)=\frac{1}{2 \sigma} e^{-|x-\mu| / \sigma}, \quad-\infty<x<\infty, \quad-\infty<\mu<\infty, \quad \sigma>0
+$$
+
+The double exponential provides a symmetric distribution with "fat" tails (much fatter than the normal), but still retains all of its moments.
+$$
+\mathrm{EX}=\mu \quad \text { and } \quad \operatorname{Var} X=2 \sigma^2
+$$
+
+
+
+## Location and Scale Families 
+
+$g(x \mid \mu, \sigma)=\frac{1}{\sigma} f\left(\frac{x-\mu}{\sigma}\right)$ is a pdf.
+
