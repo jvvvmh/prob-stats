@@ -92,3 +92,88 @@ $$
 $$
 
 That is, **convergence, for $|t|<h$, of mgfs to an mgf implies convergence of cdfs.**
+
+
+
+Theorem 2.4.1 (Leibnitz's Rule) If $f(x, \theta), a(\theta)$, and $b(\theta)$ are differentiable with respect to $\theta$, then
+$$
+\frac{d}{d \theta} \int_{a(\theta)}^{b(\theta)} f(x, \theta) d x=f(b(\theta), \theta) \frac{d}{d \theta} b(\theta)-f(a(\theta), \theta) \frac{d}{d \theta} a(\theta)+\int_{a(\theta)}^{b(\theta)} \frac{\partial}{\partial \theta} f(x, \theta) d x
+$$
+
+
+
+
+Theorem 2.4.2 Suppose the function $h(x, y)$ is continuous of $y_0$ for each $x$, and there exists a function $g(x)$ satisfying
+i. $|h(x, y)|<g(x)$ for all $x$ and $y$
+ii. $\int_{-\infty}^{\infty} g(x) d x<\infty$.
+
+Then
+$$
+\lim _{y \rightarrow y_0} \int_{-\infty}^{\infty} h(x, y) d x=\int_{-\infty}^{\infty} \lim _{y \rightarrow y_0} h(x, y) d x
+$$
+
+The key condition in this theorem is the existence of a dominating function $g(x)$, with a finite integral, which ensures that the integrals cannot be too badly behaved.
+
+
+
+Theorem 2.4.3 Suppose $f(x, \theta)$ is differentiable at $\theta=\theta_0$, that is,
+$$
+\lim _{\delta \rightarrow 0} \frac{f\left(x, \theta_0+\delta\right)-f\left(x, \theta_0\right)}{\delta}=\left.\frac{\partial}{\partial \theta} f(x, \theta)\right|_{\theta=\theta_0}
+$$
+exists for every $x$, and there exists a function $g\left(x, \theta_0\right)$ and a constant $\delta_0>0$ such that
+i. $\left|\frac{f\left(x, \theta_0+\delta\right)-f\left(x, \theta_0\right)}{\delta}\right| \leq g\left(x, \theta_0\right)$, for all $x$ and $|\delta| \leq \delta_0$,
+ii. $\int_{-\infty}^{\infty} g\left(x, \theta_0\right) d x<\infty$.
+
+Then
+$$
+\left.\frac{d}{d \theta} \int_{-\infty}^{\infty} f(x, \theta) d x\right|_{\theta=\theta_0}=\int_{-\infty}^{\infty}\left[\left.\frac{\partial}{\partial \theta} f(x, \theta)\right|_{\theta=\theta_0}\right] d x
+$$
+
+
+
+
+Theorem 2.4.8 Suppose that the series $\sum_{x=0}^{\infty} h(\theta, x)$ converges for all $\theta$ in an interval $(a, b)$ of real numbers and
+i. $\frac{\partial}{\partial \theta} h(\theta, x)$ is continuous in $\theta$ for each $x$,
+ii. $\sum_{x=0}^{\infty} \frac{\partial}{\partial \theta} h(\theta, x)$ converges uniformly on every closed bounded subinterval of $(a, b)$.
+
+Then
+$$
+\frac{d}{d \theta} \sum_{x=0}^{\infty} h(\theta, x)=\sum_{x=0}^{\infty} \frac{\partial}{\partial \theta} h(\theta, x)
+$$
+
+The condition of uniform convergence is the key one to verify in order to establish that the differentiation can be taken inside the summation. Recall that a series converges uniformly if its sequence of partial sums converges uniformly.
+Example 2.4.9 (Continuation of Exercise 2.4.7) To apply Theorem 2.4.8 we identify
+$$
+h(\theta, x)=\theta(1-\theta)^x
+$$
+and
+$$
+\frac{\partial}{\partial \theta} h(\theta, x)=(1-\theta)^x-\theta x(1-\theta)^{x-1}
+$$
+and verify that $\sum_{x=0}^{\infty} \frac{\partial}{\partial \theta} h(\theta, x)$ converges uniformly. Define $S_n(\theta)$ by
+$$
+S_n(\theta)=\sum_{x=0}^n\left[(1-\theta)^x-\theta x(1-\theta)^{x-1}\right]
+$$
+
+The convergence will be uniform on $[c, d] \subset(0,1)$ if, given $\varepsilon>0$, we can find an $N$ such that
+$$
+n>N \Rightarrow\left|S_n(\theta)-S_{\infty}(\theta)\right|<\varepsilon \quad \text { for all } \theta \in[c, d]
+$$
+
+$$
+\begin{aligned}
+S_n(\theta) & =\frac{1-(1-\theta)^{n+1}}{\theta}-\frac{\left(1-(1-\theta)^{n+1}\right)-(n+1) \theta(1-\theta)^n}{\theta} \\
+& =(n+1)(1-\theta)^n
+\end{aligned}
+$$
+
+It is clear that, for $\theta<\theta<1, S_{\infty}=\lim _{n \rightarrow \infty} S_n(\theta)=0$. Since $S_n(\theta)$ is continuous, the convergence is uniform on any closed bounded interval. Therefore, the series of derivatives converges uniformly and the interchange of differentiation and summation is justified.
+
+
+
+Theorem 2.4 .10 Suppose the series $\sum_{x=0}^{\infty} h(\theta, x)$ converges uniformly on $[a, b]$ and that, for each $x, h(\theta, x)$ is a continuous function of $\theta$. Then
+$$
+\int_a^b \sum_{x=0}^{\infty} h(\theta, x) d \theta=\sum_{x=0}^{\infty} \int_a^b h(\theta, x) d \theta
+$$
+
+
