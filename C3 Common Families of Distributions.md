@@ -51,7 +51,7 @@ P(Y=y \mid n, p)=\binom{n}{y} p^y(1-p)^{n-y}, \quad y=0,1,2, \ldots, n,
 $$
 Theorem 3.2.2 (Binomial Theorem) For any real numbers $x$ and $y$ and integer $n \geq 0$,
 $$
-(x+y)^n=\sum_{=0}^n\binom{n}{i} x^{\prime} y^{n-i}
+(x+y)^n=\sum_{=0}^n\binom{n}{i} x^{n} y^{n-i}
 $$
 
 $$
@@ -370,8 +370,6 @@ $$
 $$
 \mathrm{EX}=\frac{\alpha}{\alpha+\beta} \quad \text { and } \quad \operatorname{Var} X=\frac{\alpha \beta}{(\alpha+\beta)^2(\alpha+\beta+1)}
 $$
-
-
 
 
 
