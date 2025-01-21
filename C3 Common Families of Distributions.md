@@ -420,3 +420,30 @@ $$
 
 $g(x \mid \mu, \sigma)=\frac{1}{\sigma} f\left(\frac{x-\mu}{\sigma}\right)$ is a pdf.
 
+https://cse.buffalo.edu/~hungngo/classes/2005/Expanders/notes/asymptotic-estimates.pdf
+
+
+
+## The Poisson postulates
+
+$N_t$ is number of arrivals in the time period from time 0 to time $t$.
+i. $N_0=0$
+ii. $s<t \Rightarrow N_s$ and $N_t-N_s$ are independent
+iii. $N_s$ and $N_{t+s}-N_t$ are identically distributed
+iv. $\lim _{t \rightarrow 0} \frac{P\left(N_t=1\right)}{t}=\lambda$
+v. $\lim _{t \rightarrow 0} \frac{P\left(N_t>1\right)}{t}=0$
+
+If $i-v$ hold, then for any intiger $n$,
+$$
+P\left(N_t=n\right)=e^{-\lambda t} \frac{(\lambda t)^n}{n!}
+$$
+that is, $N_t \sim$ Poisson $(\lambda t)$.
+
+
+
+
+
+
+
+
+
